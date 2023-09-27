@@ -1,0 +1,152 @@
+type BlacklistUpdated @entity(immutable: true) {
+  id: Bytes!
+  which: Bytes! # address
+  accessNow: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BuyEnableUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAccess: Boolean! # bool
+  newAccess: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ClaimEnableUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAccess: Boolean! # bool
+  newAccess: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Claimed @entity(immutable: true) {
+  id: Bytes!
+  by: Bytes! # address
+  amount: BigInt! # uint256
+  round: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ClaimedBatch @entity(immutable: true) {
+  id: Bytes!
+  by: Bytes! # address
+  amount: BigInt! # uint256
+  rounds: [Int!]! # uint8[]
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DopTokenUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldDopAddress: Bytes! # address
+  newDopAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DopWalletUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FundsWalletUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldAddress: Bytes! # address
+  newAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type InvestedWithClaimAmount @entity(immutable: true) {
+  id: Bytes!
+  by: Bytes! # address
+  amountEth: BigInt! # uint256
+  amountUsd: BigInt! # uint256
+  round: Int! # uint8
+  price: BigInt! # uint256
+  dopPurchased: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type InvestedWithEth @entity(immutable: true) {
+  id: Bytes!
+  by: Bytes! # address
+  code: String! # string
+  amountInvestedEth: BigInt! # uint256
+  round: Int! # uint8
+  price: BigInt! # uint256
+  dopPurchased: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type InvestedWithUSDT @entity(immutable: true) {
+  id: Bytes!
+  by: Bytes! # address
+  code: String! # string
+  amountInUsd: BigInt! # uint256
+  round: Int! # uint8
+  price: BigInt! # uint256
+  dopPurchased: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoundCreated @entity(immutable: true) {
+  id: Bytes!
+  newRound: Int! # uint8
+  roundData_startTime: BigInt! # uint256
+  roundData_endTime: BigInt! # uint256
+  roundData_price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoundUpdated @entity(immutable: true) {
+  id: Bytes!
+  round: Int! # uint8
+  roundData_startTime: BigInt! # uint256
+  roundData_endTime: BigInt! # uint256
+  roundData_price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SignerUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldSigner: Bytes! # address
+  newSigner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
