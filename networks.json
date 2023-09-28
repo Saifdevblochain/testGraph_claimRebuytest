@@ -3,6 +3,9 @@
     "rebuyPreSaleDop": {
       "address": "0x72758447513B883111A0551a5a159a451F0B6c52",
       "startBlock": 9766905
+    },
+    "rebuyClaims": {
+      "address": "0x72758447513B883111A0551a5a159a451F0B6c52"
     }
   }
 }

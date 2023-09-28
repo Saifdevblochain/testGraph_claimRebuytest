@@ -1,0 +1,134 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: rebuyPreSaleDop
+    network: goerli
+    source:
+      address: "0x72758447513B883111A0551a5a159a451F0B6c52"
+      abi: rebuyPreSaleDop
+      startBlock: 9766905
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BlacklistUpdated
+        - BuyEnableUpdated
+        - ClaimEnableUpdated
+        - Claimed
+        - ClaimedBatch
+        - DopTokenUpdated
+        - DopWalletUpdated
+        - FundsWalletUpdated
+        - InvestedWithClaimAmount
+        - InvestedWithEth
+        - InvestedWithUSDT
+        - OwnershipTransferred
+        - RoundCreated
+        - RoundUpdated
+        - SignerUpdated
+      abis:
+        - name: rebuyPreSaleDop
+          file: rebuyPreSaleDop/abis/rebuyPreSaleDop.json
+      eventHandlers:
+        - event: BlacklistUpdated(address,bool)
+          handler: handleBlacklistUpdated
+        - event: BuyEnableUpdated(bool,bool)
+          handler: handleBuyEnableUpdated
+        - event: ClaimEnableUpdated(bool,bool)
+          handler: handleClaimEnableUpdated
+        - event: Claimed(indexed address,uint256,indexed uint8)
+          handler: handleClaimed
+        - event: ClaimedBatch(indexed address,uint256,indexed uint8[])
+          handler: handleClaimedBatch
+        - event: DopTokenUpdated(address,address)
+          handler: handleDopTokenUpdated
+        - event: DopWalletUpdated(address,address)
+          handler: handleDopWalletUpdated
+        - event: FundsWalletUpdated(address,address)
+          handler: handleFundsWalletUpdated
+        - event: InvestedWithClaimAmount(indexed address,uint256,uint256,indexed uint8,indexed
+            uint256,uint256)
+          handler: handleInvestedWithClaimAmount
+        - event: InvestedWithEth(indexed address,string,uint256,indexed uint8,indexed
+            uint256,uint256)
+          handler: handleInvestedWithEth
+        - event: InvestedWithUSDT(indexed address,string,uint256,indexed uint8,indexed
+            uint256,uint256)
+          handler: handleInvestedWithUSDT
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: RoundCreated(uint8,(uint256,uint256,uint256))
+          handler: handleRoundCreated
+        - event: RoundUpdated(uint8,(uint256,uint256,uint256))
+          handler: handleRoundUpdated
+        - event: SignerUpdated(address,address)
+          handler: handleSignerUpdated
+      file: rebuyPreSaleDop/rebuyPreSaleDop.wasm
+  - kind: ethereum
+    name: rebuyClaims
+    network: goerli
+    source:
+      address: "0x72758447513B883111A0551a5a159a451F0B6c52"
+      abi: rebuyClaims
+      startBlock: 9766905
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - rebuyClaimsBlacklistUpdated
+        - rebuyClaimsBuyEnableUpdated
+        - rebuyClaimsClaimEnableUpdated
+        - rebuyClaimsClaimed
+        - rebuyClaimsClaimedBatch
+        - rebuyClaimsDopTokenUpdated
+        - rebuyClaimsDopWalletUpdated
+        - rebuyClaimsFundsWalletUpdated
+        - rebuyClaimsInvestedWithClaimAmount
+        - rebuyClaimsInvestedWithEth
+        - rebuyClaimsInvestedWithUSDT
+        - rebuyClaimsOwnershipTransferred
+        - rebuyClaimsRoundCreated
+        - rebuyClaimsRoundUpdated
+        - rebuyClaimsSignerUpdated
+      abis:
+        - name: rebuyClaims
+          file: rebuyClaims/abis/rebuyClaims.json
+      eventHandlers:
+        - event: BlacklistUpdated(address,bool)
+          handler: handleBlacklistUpdated
+        - event: BuyEnableUpdated(bool,bool)
+          handler: handleBuyEnableUpdated
+        - event: ClaimEnableUpdated(bool,bool)
+          handler: handleClaimEnableUpdated
+        - event: Claimed(indexed address,uint256,indexed uint8)
+          handler: handleClaimed
+        - event: ClaimedBatch(indexed address,uint256,indexed uint8[])
+          handler: handleClaimedBatch
+        - event: DopTokenUpdated(address,address)
+          handler: handleDopTokenUpdated
+        - event: DopWalletUpdated(address,address)
+          handler: handleDopWalletUpdated
+        - event: FundsWalletUpdated(address,address)
+          handler: handleFundsWalletUpdated
+        - event: InvestedWithClaimAmount(indexed address,uint256,uint256,indexed uint8,indexed
+            uint256,uint256)
+          handler: handleInvestedWithClaimAmount
+        - event: InvestedWithEth(indexed address,string,uint256,indexed uint8,indexed
+            uint256,uint256)
+          handler: handleInvestedWithEth
+        - event: InvestedWithUSDT(indexed address,string,uint256,indexed uint8,indexed
+            uint256,uint256)
+          handler: handleInvestedWithUSDT
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: RoundCreated(uint8,(uint256,uint256,uint256))
+          handler: handleRoundCreated
+        - event: RoundUpdated(uint8,(uint256,uint256,uint256))
+          handler: handleRoundUpdated
+        - event: SignerUpdated(address,address)
+          handler: handleSignerUpdated
+      file: rebuyClaims/rebuyClaims.wasm

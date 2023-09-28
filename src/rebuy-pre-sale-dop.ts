@@ -96,7 +96,7 @@ export function handleClaimedBatch(event: ClaimedBatchEvent): void {
   )
   entity.by = event.params.by
   entity.amount = event.params.amount
-  entity.rounds = event.params.rounds
+  entity.rounds = changetype<i32[]>(event.params.rounds)
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
